@@ -1,0 +1,81 @@
+
+<!-- Calculator.vfs>
+
+<apex:page controller="Calci" >
+ <apex:form >
+ <apex:pageBlock >
+
+<apex:outputLabel >Value1    </apex:outputLabel>
+<apex:inputText value="{!userinput}"/> <br/><br/>
+<apex:outputLabel >Value2   </apex:outputLabel>
+<apex:inputText value="{!userinput1}"/><br/><br/>
+<apex:commandButton value="Add" action="{!getsum}"/>
+<apex:commandButton value="Subtract" action="{!getsub}"/>
+<apex:commandButton value="Multiply" action="{!getmul}"/>
+<apex:commandButton value="Divide" action="{!getdiv}"/>
+<apex:commandButton value="Sin" action="{!getsines}"/>
+<apex:commandButton value="Cos" action="{!getcoss}"/>
+<br/><br/>
+     
+<apex:outputLabel >Result</apex:outputLabel>
+<apex:outputText value="   {!result}" />
+
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>
+
+
+<!--Calci.apx>
+
+public class Calci {
+public Double userinput{ get;set;}
+public Double userinput1{ get;set;}
+Public Double result {get;set;}
+
+public pageReference getsum()
+{
+  result = userinput + userinput1;
+
+  return null; 
+
+}   
+
+public pageReference getsub()
+{
+  result = userinput - userinput1;
+
+  return null; 
+
+}   
+
+public pageReference getdiv()
+{
+  result = userinput / userinput1; 
+
+  return null; 
+
+}   
+
+public pageReference getmul()
+{
+  result = userinput * userinput1; 
+
+  return null; 
+
+}
+public pageReference getsines()
+{
+  result = math.sin(userinput);
+
+  return null; 
+
+}
+public pageReference getcoss()
+{
+  result = math.cos(userinput);
+
+  return null; 
+
+}
+}
+
